@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="headline">Aдаптивная галерея изображений</div>
+    <div id="gallery" class="gallery">
+      <div class="slider">
+        <div class="stage">
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 1" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 2" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 3" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 4" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 5" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 6" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 7" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 8" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 9" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 10" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 11" alt="">
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/400x266/0099ff/fff?text=Element 12" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="control">
+        <div class="nav-ctrl">
+          <span class="prev" data-shift="prev">prev</span>
+          <span class="next" data-shift="next">next</span>
+        </div>
+        <ul class="dots-ctrl"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import './js/index.js'
+
+    const gallery1 = new Gallery('gallery', {
+		// одновременно выводится 4 элемента
+		visibleItems: 4,
+		// разрешаем постраничную навигацию
+		dots: true,
+		// разрешаем управление с клавиатуры клавишами навигации "вправо / влево"
+    keyControl: true,
+    // включаем автоматическую прокрутку галереи
+    autoScroll: false,
+    // включаем адаптивность
+		responsive: true,
+		// настройки галереи в зависимости от разрешения
+		adaptive: {
+			// настройка работает в диапазоне разрешений 320-560px
+			320: {
+				// одновременно выводится 1 элемент
+				visibleItems: 1,
+				// расстояние между изображениями 5px
+				margin: 5,
+				// запрещаем постраничную навигацию
+				dots: false
+			},
+			// настройка работает в диапазоне разрешений 560-768px
+			560: {
+				// одновременно выводится 1 элемент
+				visibleItems: 2,
+				// расстояние между изображениями 5px
+				margin: 5,
+				// запрещаем постраничную навигацию
+				dots: false
+			},
+			// настройка работает в диапазоне разрешений 768-1024px
+			768: {
+				// одновременно выводятся 2 элемента
+				visibleItems: 3,
+			},
+			// настройка работает в диапазоне разрешений 1024 и выше
+			1024: {
+				// одновременно выводятся 3 элемента
+				visibleItems: 4
+			}
+		}
+  });
+
+  console.log('gallery1', gallery1)
+  </script>
+  
+</body>
+</html>
